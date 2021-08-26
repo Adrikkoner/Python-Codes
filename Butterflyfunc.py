@@ -1,15 +1,18 @@
 from matplotlib import pyplot as plt
 import numpy as np
 
+
 def funcy(t):
-    y = np.sin(t)*(np.exp(np.cos(t))-2*np.cos(4*t)-(np.sin(t/12))**5)
+    y = np.sin(t) * (np.exp(np.cos(t)) - 2 * np.cos(4 * t) - (np.sin(t / 12)) ** 5)
     return y
 
+
 def funcx(t):
-    x = np.cos(t)*(np.exp(np.cos(t))-2*np.cos(4*t)-(np.sin(t/12))**5)
+    x = np.cos(t) * (np.exp(np.cos(t)) - 2 * np.cos(4 * t) - (np.sin(t / 12)) ** 5)
     return x
 
-t =np.linspace(0,12*np.pi,1000)
+
+t = np.linspace(0, 12 * np.pi, 1000)
 x = funcx(t)
 y = funcy(t)
 fig, ax = plt.subplots()  # Create a figure and an axes.

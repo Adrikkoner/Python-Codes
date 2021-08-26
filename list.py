@@ -1,20 +1,20 @@
-#List defination
+# List defination
 
-a = [1,1,5,8,6,5]
+a = [1, 1, 5, 8, 6, 5]
 print(a)
 
-#List append()
+# List append()
 a.append(10)
 print(a)
-b = [1,5,8]
+b = [1, 5, 8]
 a.append(b)
 print(a)
-a.append('addffg')
+a.append("addffg")
 print(a)
 
-#List extend
-a = [4,5,8,5,6,7]
-b = [7,8,5,8,4,6]
+# List extend
+a = [4, 5, 8, 5, 6, 7]
+b = [7, 8, 5, 8, 4, 6]
 a.extend(b)
 print(a)
 c = a + b
@@ -24,7 +24,7 @@ print(c)
 print(c.index(4))
 
 # List insert
-c.insert(0,1)
+c.insert(0, 1)
 print(c)
 
 # list pop
@@ -39,12 +39,12 @@ print(c)
 print(c.count(7))
 
 # list sort
-c.sort(reverse = True)
+c.sort(reverse=True)
 print(c)
 
 
 # multiplication operator
-print(c*4)
+print(c * 4)
 print(len(c))
 
 # Accessing Value

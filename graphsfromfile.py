@@ -1,22 +1,22 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
-x =[]
+x = []
 y = []
 
-with open('myfile.txt','r') as f:
+with open("myfile.txt", "r") as f:
     words = f.readlines()
     for word in words:
         word = word.split()
-        #print(word)
+        # print(word)
         x.append(float(word[0]))
         y.append(float(word[1]))
 
-#print(x,y)
+# print(x,y)
 x = np.array(x)
 y = np.array(y)
 yexp = np.exp(x)
-yexp2 = np.exp(x*x)
+yexp2 = np.exp(x * x)
 
 fig, ax = plt.subplots()  # Create a figure and an axes.
 ax.plot(x, yexp, label="x")  # Plot some data on the axes.

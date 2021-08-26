@@ -1,4 +1,3 @@
-
 # Graph both of the following functions on a single figure, with
 # a usefully-sized scale.
 # (a)x4e−2x
