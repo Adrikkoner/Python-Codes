@@ -4,7 +4,7 @@ import numpy as np
 
 
 def function(x):
-    y = (x * x * x * x) - 5
+    y = np.sin(x)
     return y
 
 
@@ -23,15 +23,17 @@ def funcplot(initial=-10, final=10):
 
 
 def derivative(x):
-    y = 4 * x * x * x
+    y =  np.cos(x)
     return y
 
 
 def seedsgen(initial=-10, final=10):
     seed = []
-    for i in range(initial, final, 1):
-        if function(i) * function(i - 1) < 0:
+    i = initial
+    while(i<= final):
+        if function(i) * function(i - 0.1) < 0:
             seed.append(i)
+        i += 0.1
     return seed
 
 
