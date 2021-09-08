@@ -1,3 +1,4 @@
+
 from random import  uniform
 from math import sqrt, pi
 import numpy as np 
@@ -46,7 +47,7 @@ def Main():
     dimensions = []
     gamma = []
 
-    for i in range(3,5,1):
+    for i in range(1,20,1):
         
         print('Calculating for dimension:',i)
         dimensions.append(i)
@@ -75,5 +76,3 @@ if __name__=='__main__':
 
 
 
-
- 
