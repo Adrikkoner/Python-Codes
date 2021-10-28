@@ -1,0 +1,44 @@
+Starting Calculations Thu Oct 28 14:29:37 2021
+
+Found bound state at E=  -1.000000033 E_exact=  -1.000000000 l=0 n=1
+Found bound state at E=  -0.250000000 E_exact=  -0.250000000 l=0 n=2
+Found bound state at E=  -0.111111111 E_exact=  -0.111111111 l=0 n=3
+Found bound state at E=  -0.062500002 E_exact=  -0.062500000 l=0 n=4
+Found bound state at E=  -0.039999836 E_exact=  -0.040000000 l=0 n=5
+Found bound state at E=  -0.027733156 E_exact=  -0.027777778 l=0 n=6
+Found bound state at E=  -0.019181545 E_exact=  -0.020408163 l=0 n=7
+Found bound state at E=  -0.249999997 E_exact=  -0.250000000 l=1 n=1
+Found bound state at E=  -0.111111111 E_exact=  -0.111111111 l=1 n=2
+Found bound state at E=  -0.062500002 E_exact=  -0.062500000 l=1 n=3
+Found bound state at E=  -0.039999960 E_exact=  -0.040000000 l=1 n=4
+Found bound state at E=  -0.027742609 E_exact=  -0.027777778 l=1 n=5
+Found bound state at E=  -0.019305078 E_exact=  -0.020408163 l=1 n=6
+Found bound state at E=  -0.111111114 E_exact=  -0.111111111 l=2 n=1
+Found bound state at E=  -0.062500003 E_exact=  -0.062500000 l=2 n=2
+Found bound state at E=  -0.040000107 E_exact=  -0.040000000 l=2 n=3
+Found bound state at E=  -0.027755899 E_exact=  -0.027777778 l=2 n=4
+Found bound state at E=  -0.019509891 E_exact=  -0.020408163 l=2 n=5
+Found bound state at E=  -0.062500000 E_exact=  -0.062500000 l=3 n=1
+Found bound state at E=  -0.040000009 E_exact=  -0.040000000 l=3 n=2
+Found bound state at E=  -0.027765346 E_exact=  -0.027777778 l=3 n=3
+Found bound state at E=  -0.019768987 E_exact=  -0.020408163 l=3 n=4
+Found bound state at E=  -0.040000010 E_exact=  -0.040000000 l=4 n=1
+Found bound state at E=  -0.027772890 E_exact=  -0.027777778 l=4 n=2
+Found bound state at E=  -0.020029141 E_exact=  -0.020408163 l=4 n=3
+Found bound state at E=  -0.027776892 E_exact=  -0.027777778 l=5 n=1
+Found bound state at E=  -0.020239681 E_exact=  -0.020408163 l=5 n=2
+------------------------------------------------------------------
+Ploting for 1s with Energy = -1.000000033034256
+------------------------------------------------------------------
+Ploting for 2s with Energy = -0.24999999959366614
+------------------------------------------------------------------
+Ploting for 2p with Energy = -0.11111111111454078
+------------------------------------------------------------------
+Ploting for 3s with Energy = -0.11111111088115905
+------------------------------------------------------------------
+Ploting for 3p with Energy = -0.06250000214456702
+------------------------------------------------------------------
+Ploting for 3d with Energy = -0.04000010720947516
+***************************************
+Calculations are done.Thu Oct 28 14:29:43 2021
+Time taken for calculations 6.419199466705322 secs

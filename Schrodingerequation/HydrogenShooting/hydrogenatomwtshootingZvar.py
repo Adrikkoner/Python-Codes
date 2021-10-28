@@ -6,7 +6,14 @@ from scipy import integrate
 from scipy import optimize
 from matplotlib import pyplot as plt
 import numpy as np
+import time
 
+# Modifies print function to write in console and file simultaneously
+def fprint(data):
+    filename = "HydrogenShootingZvar.out"
+    with open(filename, "a") as f:
+        f.write(data + "\n")
+        print(data)
 
 
 # Schrodinger equation as a function
@@ -16,16 +23,7 @@ def Schroed_deriv(y, r, l, En, Z):
     return np.array([up, (l * (l + 1) / r ** 2 - 2 * Z / r - En) * u])
 
 
-def SolveSchroedinger(En, l, R, Z):
-    Rb = R[::-1]
-    du0 = -1e-5
-    urb = integrate.odeint(Schroed_deriv, [0.0, du0], Rb, args=(l, En, Z))
-    ur = urb[:, 0][::-1]
-    norm = integrate.simps(ur ** 2, x=R)
-    ur *= 1.0 / np.lib.scimath.sqrt(norm)
-    return ur
-
-
+# Subroutine to implement shooting method
 def Shoot(En, R, l, Z):
     Rb = R[::-1]
     du0 = -1e-5
@@ -42,6 +40,7 @@ def Shoot(En, R, l, Z):
     return f_at_0
 
 
+# Subroutine to find the Bound state using shooting method
 def FindBoundStates(R, l, nmax, Esearch, Z):
     n = 0
     Ebnd = []
@@ -50,7 +49,7 @@ def FindBoundStates(R, l, nmax, Esearch, Z):
         u1 = Shoot(Esearch[i], R, l, Z)
         if u0 * u1 < 0:
             Ebound = optimize.brentq(
-                Shoot, Esearch[i - 1], Esearch[i], xtol=1e-16, args=(R, l,Z)
+                Shoot, Esearch[i - 1], Esearch[i], xtol=1e-16, args=(R, l, Z)
             )
             Ebnd.append((n, l, Ebound))
             if len(Ebnd) > nmax:
@@ -65,14 +64,18 @@ def FindBoundStates(R, l, nmax, Esearch, Z):
     return Ebnd
 
 
+# Starting of calculations
+
+fprint("Starting Calculations " + time.asctime() + "\n")
+t0 = time.time()
 Esearch = -1.2 / np.arange(1, 20, 0.2) ** 2
 
-R = np.logspace(-6, 2, 500)
+R = np.logspace(-6, 1.8, 500)
 fig, ax = plt.subplots()  # Create a figure and an axes.
 ax.set_xlabel("r")  # Add an x-label to the axes.
 ax.set_ylabel("u(r)")  # Add a y-label to the axes.
 ax.set_title("Eigenvalue Plot")  # Add a title to the axes.
-for Z in [1,2,4]:
+for Z in [1, 2, 4]:
     nmax = 2
     Bnd = []
     for l in range(nmax - 1):
@@ -81,16 +84,19 @@ for Z in [1,2,4]:
     du0 = -1e-5
     pqnum = [1, 2, 3]
     azimqnum = ["s", "p", "d"]
-    
 
     for n, l, En in Bnd:
-        if n==1:
-            print("------------------------------------------------------------------")
-            print("Ploting for " + str(n) + azimqnum[l] + " with Energy = " + str(En))
-            ub = integrate.odeint(Schroed_deriv, [0.0, du0], Rb, args=(l, En,Z))
+        if n == 1:
+            fprint("------------------------------------------------------------------")
+            fprint("Ploting for " + str(n) + azimqnum[l] + " with Energy = " + str(En) + "for Z= " + str(Z))
+            ub = integrate.odeint(Schroed_deriv, [0.0, du0], Rb, args=(l, En, Z))
             ur = ub[:, 0][::-1]
             norm = integrate.simps(ur ** 2, x=R)
             ur *= 1.0 / np.lib.scimath.sqrt(norm)
-            ax.plot(R, ur, label="Z="+ str(Z) + " " + str(n) + azimqnum[l])
+            ax.plot(R, ur, label="Z=" + str(Z) + " " + str(n) + azimqnum[l])
 ax.legend()
 plt.savefig("HydrogenatonEigenvaluesZvar.png")
+fprint("***************************************")
+
+fprint("Calculations are done." + time.asctime())
+fprint("Time taken for calculations " + str(time.time() - t0) + " secs")
