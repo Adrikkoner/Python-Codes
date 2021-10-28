@@ -56,8 +56,8 @@ def FindBoundStates(R, l, nmax, Esearch, Z):
                 break
             n += 1
             print(
-                "Found bound state at E=%14.9f E_exact=%14.9f l=%d n=%d"
-                % (Ebound, -1.0 / (n + l) ** 2, l, n)
+                "Found bound state at E=%14.9f l=%d n=%d"
+                % (Ebound, l, n)
             )
         u0 = u1
 
@@ -70,7 +70,7 @@ fprint("Starting Calculations " + time.asctime() + "\n")
 t0 = time.time()
 Esearch = -1.2 / np.arange(1, 20, 0.2) ** 2
 
-R = np.logspace(-6, 1.8, 500)
+R = np.logspace(-6, 1.5, 500)
 fig, ax = plt.subplots()  # Create a figure and an axes.
 ax.set_xlabel("r")  # Add an x-label to the axes.
 ax.set_ylabel("u(r)")  # Add a y-label to the axes.
