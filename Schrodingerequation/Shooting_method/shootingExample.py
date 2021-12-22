@@ -11,7 +11,7 @@ from scipy.integrate import odeint
 #defining the derivative
 
 def f(u,x):
-    y, z, =u
+    y, z =u
     f1, f2 = z, -y + 2*z**2/y
     return [f1,f2]
 
@@ -23,9 +23,10 @@ z1, z2 = 0.1,0.3                        #two initial guess values of z
 u = [y0,z1]                        #packing with 1st gues value
 
 sol=odeint(f,u,x)
+print(sol)
 w1=sol[:,0][-1]                         #value of y at eh end point
 
-tol = 0.0001
+tol = 0.00001
 
 for i in range(1000):
     u=[y0,z2]                        #packing with 2nd guess value
