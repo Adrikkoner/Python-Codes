@@ -9,3 +9,7 @@ print(sol.root, sol.iterations)
 
 sol = optimize.root_scalar(f, x0=0.2, fprime=fprime, method='newton')
 print(sol.root, sol.iterations)
+
+def fun_rosenbrock(x):
+    return np.array([10 * (x[1] - x[0]**2), (1 - x[0])])
+

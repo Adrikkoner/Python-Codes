@@ -10,10 +10,12 @@ plt.scatter(x_data, y_data)
 
 def func(x, a, b):
     return a*x**2 + b
+
 popt, pcov = curve_fit(func, x_data, y_data, p0=(1,1))
-print(popt)
+a,b = popt
+print(a,b)
 x_fit = np.linspace(0,10,100)
-y_fit = func(x_fit,popt[0],popt[1])
+y_fit = func(x_fit,a,b)
 plt.plot(x_fit,y_fit)
 plt.show()
 #Problem 2
