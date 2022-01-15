@@ -4,6 +4,7 @@ import math
 def func(x):
     return x ** (-1.5)
 
+
 print("Integration using Trapezoidal rule")
 a = float(input("Input the lower limit: "))
 b = float(input("Input the higher limit: "))

@@ -22,6 +22,7 @@ def Schroed_deriv(y, r, l, En):
     (u, up) = y
     return np.array([up, (l * (l + 1) / r ** 2 - 2 / r - En) * u])
 
+
 # Subroutine to implement shooting method
 def Shoot(En, R, l):
     Rb = R[::-1]
@@ -38,6 +39,7 @@ def Shoot(En, R, l):
     f_at_0 = f0 + (f1 - f0) * (0.0 - R[0]) / (R[1] - R[0])
     return f_at_0
 
+
 # Subroutine to find the Bound state using shooting method
 def FindBoundStates(R, l, nmax, Esearch):
     n = 0
@@ -49,7 +51,7 @@ def FindBoundStates(R, l, nmax, Esearch):
             Ebound = optimize.brentq(
                 Shoot, Esearch[i - 1], Esearch[i], xtol=1e-16, args=(R, l)
             )
-            Ebnd.append((n+1, l, Ebound))
+            Ebnd.append((n + 1, l, Ebound))
             if len(Ebnd) > nmax:
                 break
             n += 1
@@ -60,6 +62,7 @@ def FindBoundStates(R, l, nmax, Esearch):
         u0 = u1
 
     return Ebnd
+
 
 # Starting of calculations
 fprint("Starting Calculations " + time.asctime() + "\n")
@@ -99,4 +102,4 @@ plt.savefig("HydrogenatonEigenvalues.png")
 fprint("***************************************")
 
 fprint("Calculations are done." + time.asctime())
-fprint("Time taken for calculations " + str(time.time()-t0) + " secs")
+fprint("Time taken for calculations " + str(time.time() - t0) + " secs")

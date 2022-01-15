@@ -55,10 +55,7 @@ def FindBoundStates(R, l, nmax, Esearch, Z):
             if len(Ebnd) > nmax:
                 break
             n += 1
-            print(
-                "Found bound state at E=%14.9f l=%d n=%d"
-                % (Ebound, l, n)
-            )
+            print("Found bound state at E=%14.9f l=%d n=%d" % (Ebound, l, n))
         u0 = u1
 
     return Ebnd
@@ -88,7 +85,15 @@ for Z in [1, 2, 4]:
     for n, l, En in Bnd:
         if n == 1:
             fprint("------------------------------------------------------------------")
-            fprint("Ploting for " + str(n) + azimqnum[l] + " with Energy = " + str(En) + "for Z= " + str(Z))
+            fprint(
+                "Ploting for "
+                + str(n)
+                + azimqnum[l]
+                + " with Energy = "
+                + str(En)
+                + "for Z= "
+                + str(Z)
+            )
             ub = integrate.odeint(Schroed_deriv, [0.0, du0], Rb, args=(l, En, Z))
             ur = ub[:, 0][::-1]
             norm = integrate.simps(ur ** 2, x=R)
