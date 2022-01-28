@@ -5,7 +5,6 @@
 # Make sure your figure has legend, range, title, axis labels, and so on.
 
 # importing matplotlib module
-from turtle import color
 from matplotlib import pyplot as plt
 import numpy as np
 from math import pi
