@@ -1,0 +1,12 @@
+Starting Calculations Thu Oct 28 14:28:55 2021
+
+Found bound state at E=  -0.814116090 l=0 n=1
+Found bound state at E=  -0.099856540 l=0 n=2
+Found bound state at E=  -0.006415762 l=0 n=3
+Found bound state at E=  -0.093068778 l=1 n=1
+Found bound state at E=  -0.003176651 l=1 n=2
+------------------------------------------------------------------
+Ploting for 3s with Energy = -0.006415762150970595 and lambda = 10
+***************************************
+Calculations are done.Thu Oct 28 14:29:11 2021
+Time taken for calculations 15.991404056549072 secs

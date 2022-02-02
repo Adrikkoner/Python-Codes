@@ -1,0 +1,56 @@
+Starting Calculations Thu Oct 28 14:29:15 2021
+
+Found bound state at E=  -0.814116090 l=0 n=1
+Found bound state at E=  -0.099856540 l=0 n=2
+Found bound state at E=  -0.006415762 l=0 n=3
+Found bound state at E=  -0.093068778 l=1 n=1
+Found bound state at E=  -0.003176651 l=1 n=2
+------------------------------------------------------------------
+Ploting for 1s with Energy = -0.8141160902058124 and lambda = 10
+------------------------------------------------------------------
+Ploting for 2s with Energy = -0.09985653957265886 and lambda = 10
+------------------------------------------------------------------
+Ploting for 3s with Energy = -0.006415762150970595 and lambda = 10
+***************************************
+Found bound state at E=  -0.903632873 l=0 n=1
+Found bound state at E=  -0.163542389 l=0 n=2
+Found bound state at E=  -0.038705110 l=0 n=3
+Found bound state at E=  -0.006182045 l=0 n=4
+Found bound state at E=  -0.161480770 l=1 n=1
+Found bound state at E=  -0.037115504 l=1 n=2
+Found bound state at E=  -0.005194530 l=1 n=3
+Found bound state at E=  -0.033831141 l=2 n=1
+Found bound state at E=  -0.003159253 l=2 n=2
+------------------------------------------------------------------
+Ploting for 1s with Energy = -0.90363287264789 and lambda = 20
+------------------------------------------------------------------
+Ploting for 2s with Energy = -0.16354238872216653 and lambda = 20
+------------------------------------------------------------------
+Ploting for 3s with Energy = -0.03870510974386353 and lambda = 20
+***************************************
+Found bound state at E=  -0.960592228 l=0 n=1
+Found bound state at E=  -0.212296640 l=0 n=2
+Found bound state at E=  -0.076040030 l=0 n=3
+Found bound state at E=  -0.030758534 l=0 n=4
+Found bound state at E=  -0.012057274 l=0 n=5
+Found bound state at E=  -0.003393187 l=0 n=6
+Found bound state at E=  -0.211926793 l=1 n=1
+Found bound state at E=  -0.075704779 l=1 n=2
+Found bound state at E=  -0.030467616 l=1 n=3
+Found bound state at E=  -0.011819110 l=1 n=4
+Found bound state at E=  -0.003245691 l=1 n=5
+Found bound state at E=  -0.075030257 l=2 n=1
+Found bound state at E=  -0.029880120 l=2 n=2
+Found bound state at E=  -0.011336535 l=2 n=3
+Found bound state at E=  -0.028983959 l=3 n=1
+Found bound state at E=  -0.010595101 l=3 n=2
+Found bound state at E=  -0.009569763 l=4 n=1
+------------------------------------------------------------------
+Ploting for 1s with Energy = -0.9605922279015445 and lambda = 50
+------------------------------------------------------------------
+Ploting for 2s with Energy = -0.21229663955936776 and lambda = 50
+------------------------------------------------------------------
+Ploting for 3s with Energy = -0.0760400303707548 and lambda = 50
+***************************************
+Calculations are done.Thu Oct 28 14:29:33 2021
+Time taken for calculations 17.99623417854309 secs

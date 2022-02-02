@@ -23,14 +23,14 @@ def funcplot(initial=-10, final=10):
 
 
 def derivative(x):
-    y =  np.cos(x)
+    y = np.cos(x)
     return y
 
 
 def seedsgen(initial=-10, final=10):
     seed = []
     i = initial
-    while(i<= final):
+    while i <= final:
         if function(i) * function(i - 0.1) < 0:
             seed.append(i)
         i += 0.1

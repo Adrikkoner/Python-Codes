@@ -4,6 +4,10 @@ import numpy as np
 from matplotlib import pyplot as plt
 import threading
 import time
+from mpi4py import MPI
+import math
+
+t0 = time.time()
 
 # Inherting the base class 'Thread'
 class AsyncWrite(threading.Thread):
@@ -24,9 +28,29 @@ class AsyncWrite(threading.Thread):
 
 
 def calculategama(dimensions, N):
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    nprocs = comm.Get_size()
+    # number of integration steps
+    nsteps = N
 
+    if rank == 0:
+        # determine the size of each sub-task
+        ave, res = divmod(nsteps, nprocs)
+        counts = [ave + 1 if p < res else ave for p in range(nprocs)]
+
+        # determine the starting and ending indices of each sub-task
+        starts = [sum(counts[:p]) for p in range(nprocs)]
+        ends = [sum(counts[: p + 1]) for p in range(nprocs)]
+
+        # save the starting and ending indices in data
+        data = [(starts[p], ends[p]) for p in range(nprocs)]
+    else:
+        data = None
+
+    data = comm.scatter(data, root=0)
     count = 0
-    for j in range(N):
+    for j in range(data[0], data[1]):
         randomnolist = []
         sum = 0
         for k in range(dimensions):
@@ -35,9 +59,12 @@ def calculategama(dimensions, N):
             sum = sum + point * point
         if sum <= 1:
             count += 1
+    sum = comm.gather(sum, root=0)
     Answer = 2 ** dimensions * float(count) / float(N)
     gama = float(Answer) / float(pi)
-    print("Gamma =", gama)
+    if rank == 0:
+        print("Computed in {:.3f} sec".format(time.time() - t0))
+        print("Gamma =", gama)
     return gama
 
 
